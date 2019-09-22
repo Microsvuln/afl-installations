@@ -1,0 +1,15 @@
+There is a bug in installing LLVM mode of afl fuzzer under ubuntu 18.04 (bionic) .
+
+Here's the workaround :
+
+$ cd llvm_mode/
+$ vim Makefile
+
+Replace the whole CLANG_CFL with the follwing line :
+
+CLANG_CFL    = `$(LLVM_CONFIG) --cxxflags` -Wl,-znodelete -fno-rtti -fpic $(CXXFLAGS)
+
+Then shoot out :
+$ make 
+
+No error, no segfault! happy fuzzing :)
