@@ -1,4 +1,4 @@
-$ cd qemu_mode
-$ wget -O patches/memfd.diff https://salsa.debian.org/qemu-team/qemu/raw/ubuntu-bionic-2.11/debian/patches/ubuntu/lp1753826-memfd-fix-configure-test.patch
-$ sed -i '/syscall.diff/a patch -p1 <../patches/memfd.diff || exit 1' build_qemu_support.sh
-$ ./build_qemu_support.sh
+cd qemu_mode
+wget -O patches/memfd.diff https://salsa.debian.org/qemu-team/qemu/raw/ubuntu-bionic-2.11/debian/patches/ubuntu/lp1753826-memfd-fix-configure-test.patch
+sed -i '/syscall.diff/a patch -p1 <../patches/memfd.diff || exit 1' build_qemu_support.sh
+./build_qemu_support.sh
